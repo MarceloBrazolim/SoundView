@@ -1,51 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/amplitudeTxt"
+        android:text="@string/amplitude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:translationY="25dp" />
 
-    <!-- slider -->
-    <!-- range: 1 / 255 -->
-    <!-- default: 50 -->
+    <TextView
+        android:id="@+id/intensityTxt"
+        android:text="@string/intensity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:translationY="25dp"
+        android:layout_below="@id/amplitudeTxt" />
+
+    <TextView
+        android:id="@+id/decibelTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/decibel"
+        android:textSize="20sp"
+        android:translationY="25dp"
+        android:layout_below="@id/intensityTxt" />
+
     <com.google.android.material.slider.Slider
-        android:id="@+id/slider"
+        android:id="@+id/threshold"
+        android:contentDescription="@string/threshold_slider"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/rectangle_solid_round"
+        android:padding="15dp"
+        android:rotation="-90"
+        android:translationX="110dp"
+        android:value="110"
         android:valueFrom="1"
         android:valueTo="255"
-        android:value="50"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:ignore="VisualLintBounds" />
 
-    <!-- btn1 -->
-    <!-- Vibrate -->
-    <Button
-        android:id="@+id/btn1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Vibrate"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true">
 
-    <!-- btn2 -->
-    <!-- Cancel -->
-    <Button
-        android:id="@+id/btn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cancel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <View
+            android:id="@+id/navBg"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/rectangle_gradient"
+            android:layout_alignParentBottom="true" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/vibrateBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="15dp"
+            android:text="@string/vibrate" />
+    </RelativeLayout>
+
+</RelativeLayout>
