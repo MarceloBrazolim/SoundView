@@ -1,10 +1,15 @@
-Luciane66 — 11/22/2022 9:57 PM
-probably tmw
-if not I'll look for one but idk I wanna talk to her again tmw
-she said she had some ideas she had to look it up
-but essentially we would have a different colour for each note, or actually, one colours for majors, one for minors, one for # majors, and one for bMinors
-but thats just essentially
+TODO
+- change status bar color to primary color
+- increase threshold width to 300~350dp
+- add legacy intensity multiplier slider
+- implement color library for single color brightness and rgb range (on hold)
+- clean layout of sensibility sliders (only after testing) (kinda needs a review, only if the legacy multiplier slider gets deprecate)
+- base intensity on raw db levels (on hold) 
 
-tem um monte de slider ai q da pra tu mudar os multiplicadores sem ter q reformatar o codigo inteiro
-os valores sao calculados assim
-<img src="/img/1.png"> <img src="/img/2.png">
+also
+> To have one slider that influences the sensitivity of the mic
+> And base the colour on db values
+assim seriam dois valores diferentes, praticamente o output visual estaria diferente da vibraçao, que ta la pra auxiliar a percepçao dq ta acontecendo
+> To have one slider that influences the sensitivity of the mic
+do jeito que tava antes, com dois sliders, um de threshold (o unico atual), e o que muda o multiplicador de sensibilidade, certo?
+eu tirei esse segundo slider pra automatizar a detecçao de sensibilidade baseado no historico de intensidade
